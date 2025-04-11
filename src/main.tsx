@@ -1,28 +1,11 @@
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
-import { BrowserRouter, Routes } from "react-router";
-import "./index.css";
+import { BrowserRouter, Route, Routes } from "react-router";
 import App from "./App.tsx";
-import { Route } from "react-router";
+import "./index.css";
 import People from "./People.tsx";
-import Spaceships from "./Spaceships.tsx";
 import Planets from "./Planets.tsx";
-
-if ("serviceWorker" in navigator) {
-  window.addEventListener("load", () => {
-    navigator.serviceWorker
-      .register("/sw.js")
-      .then((registration) => {
-        console.log(
-          "Service Worker registered with scope:",
-          registration.scope
-        );
-      })
-      .catch((error) => {
-        console.error("Service Worker registration failed:", error);
-      });
-  });
-}
+import Spaceships from "./Spaceships.tsx";
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
