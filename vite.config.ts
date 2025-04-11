@@ -11,7 +11,8 @@ export default defineConfig({
     VitePWA({
       srcDir: "src",
       filename: "sw.ts",
-      injectManifest: {},
+      strategies: "injectManifest",
+
       includeAssets: [
         "favicon.ico",
         "apple-touch-icon-180x180.png",
