@@ -9,6 +9,9 @@ export default defineConfig({
     react(),
     tailwindcss(),
     VitePWA({
+      srcDir: "src",
+      filename: "sw.ts",
+      injectManifest: {},
       includeAssets: [
         "favicon.ico",
         "apple-touch-icon-180x180.png",
