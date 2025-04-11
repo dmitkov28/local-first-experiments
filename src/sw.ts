@@ -6,11 +6,11 @@ import { precacheAndRoute } from "workbox-precaching";
 precacheAndRoute(self.__WB_MANIFEST);
 
 // src/sw.ts
-self.addEventListener('install', (_: ExtendableEvent) => {
-  console.log('Hello from the service worker!');
+self.addEventListener("install", (_: ExtendableEvent) => {
+  console.log("Hello from the service worker!");
   self.skipWaiting();
 });
 
-self.addEventListener('activate', (event: ExtendableEvent) => {
+self.addEventListener("activate", (event: ExtendableEvent) => {
   event.waitUntil(self.clients.claim());
 });
