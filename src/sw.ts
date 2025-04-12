@@ -86,3 +86,27 @@ registerRoute(
     ],
   })
 );
+
+// broadcast network status changes
+let isOnline = true;
+
+// Function to broadcast status changes to all clients
+const broadcastNetworkStatus = (online: boolean) => {
+  isOnline = online;
+  self.clients.matchAll().then(clients => {
+    clients.forEach(client => {
+      client.postMessage({
+        type: 'NETWORK_STATUS_CHANGE',
+        isOnline
+      });
+    });
+  });
+};
+
+self.addEventListener('online', () => {
+  broadcastNetworkStatus(true);
+});
+
+self.addEventListener('offline', () => {
+  broadcastNetworkStatus(false);
+});
