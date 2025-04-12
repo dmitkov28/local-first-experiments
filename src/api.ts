@@ -29,3 +29,24 @@ export async function fetchPlanet(id: string) {
   const planet = await get<Planet>(`${endpoints.planets}/${id}`);
   return planet;
 }
+
+export async function searchPeople(q: string) {
+  const people = await get<PeopleSearchResults>(
+    `${endpoints.people}?search=${q}`
+  );
+  return people;
+}
+
+export async function searchPlanets(q: string) {
+  const planets = await get<PlanetsSearchResults>(
+    `${endpoints.planets}?search=${q}`
+  );
+  return planets;
+}
+
+export async function searchSpaceships(q: string) {
+  const spaceships = await get<SpaceshipSearchResults>(
+    `${endpoints.spaceships}?search=${q}`
+  );
+  return spaceships;
+}
