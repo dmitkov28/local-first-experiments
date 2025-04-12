@@ -55,4 +55,25 @@ declare global {
     terrain: string;
     url: string;
   }
+
+  interface PeopleSearchResults {
+    count: number;
+    next: null;
+    previous: null;
+    results: Person[];
+  }
+
+  interface PlanetsSearchResults {
+    count: number;
+    next: null;
+    previous: null;
+    results: Planet[];
+  }
+
+  interface SpaceshipSearchResults {
+    count: number;
+    next: null;
+    previous: null;
+    results: Spaceship[];
+  }
 }
